@@ -73,49 +73,6 @@ Content-Type: application/json
 GET /api/accounts/{accountNumber}/transactions
 ```
 
-## Scalability Features
-
-1. **Database Persistence**
-   - PostgreSQL for reliable data storage
-   - Connection pooling with HikariCP
-   - Batch processing for bulk operations
-   - Optimized query performance with indexes
-
-2. **Caching Strategy**
-   - Redis caching for frequently accessed data
-   - Configurable cache TTL
-   - Cache invalidation on updates
-   - Distributed caching support
-
-3. **Concurrency Handling**
-   - Optimistic locking for account version control
-   - Pessimistic locking for transfer operations
-   - Transaction isolation levels
-   - Thread-safe operations
-
-4. **Performance Optimization**
-   - Lazy loading of relationships
-   - Pagination support for large datasets
-   - Connection pool tuning
-   - Server thread pool configuration
-
-5. **Horizontal Scalability**
-   - Stateless application design
-   - Externalized configuration
-   - Distributed caching
-   - Load balancer ready
-
-## Error Handling
-
-The API includes comprehensive error handling for various scenarios:
-- Invalid input validation
-- Insufficient funds
-- Account not found
-- Same account transfers
-- Negative amounts
-- Concurrent modification exceptions
-- Unexpected errors
-
 ## Implementation Details
 
 - Three-layer architecture (Controller, Service, Repository)
@@ -143,11 +100,3 @@ The application supports:
 - Performance metrics
 - Cache statistics
 - Connection pool metrics
-
-## Assumptions
-
-1. Account numbers are automatically generated UUIDs
-2. All monetary values are in the same currency
-3. PostgreSQL is used for data persistence
-4. Redis is used for caching
-5. Transactions are ACID compliant 
